@@ -1,0 +1,82 @@
+package projetos.atividadeEstoque;
+
+import java.util.Scanner;
+public class TelaProduto {
+	
+	public static Scanner sc = new Scanner(System.in);
+	public static Prato pd = new Prato();
+	
+	public static void main(String[] args) {
+		
+		Insumo ins = new Insumo();
+		ins.nome = "afçlsdkjfç";
+		ins.estoqueM = 23223;
+		ins.estoqueA = 928734;
+		ins.medida = 1;
+		GerenciadorIngredientes.listIns.add(ins);
+
+		selecionarOpcao();
+	}
+	
+	public static void selecionarOpcao() {
+		int opcao;
+		do {
+			 System.out.println("================== Tela Produtos ==================");
+			  System.out.println("");
+			  System.out.println("Por favor selecione uma das opções ");
+			  System.out.println("");
+			  System.out.println("0- Voltar ao menu Inicial");
+			  System.out.println("1- Cadastrar produto");
+			  System.out.println("2- Pesquisar produto");
+			  System.out.println("3- Alterar Produto");
+			  System.out.println("4- Deletar Produto");
+			  System.out.println("");
+			  opcao = Integer.parseInt(sc.nextLine());
+			  System.out.println("Voce escolheu a opção: " + opcao);
+			switch (opcao) {
+			case 0:
+				System.out.println("Voltar para o menu");
+				TelaEstoqueInsumo.opcoesCadastro();
+				break;
+			case 1:
+				cadastrarProduto();
+				break;
+			case 2:
+				
+				break;
+			case 3:
+				
+				break;
+			case 4:
+				
+				break;
+			default:
+				System.out.println("Opção inválida " + opcao);
+				break;
+			}
+		} while (opcao != 0);
+	}
+	
+	public static void cadastrarProduto() {
+		
+		System.out.println("Informe o nome do produto");
+		System.out.println("");
+		System.out.println("Nome: ");
+		pd.nomePro = sc.next();
+		System.out.println("");
+		System.out.println("ID: ");
+		pd.idPro = sc. nextInt();
+		System.out.println("");
+		System.out.println("Preço: ");
+		pd.preçoPro = sc.nextDouble();
+		System.out.println("");
+		System.out.println("Adicione uma lista de ingredientes");
+		GerenciadorIngredientes.consultarEstoque();
+		int indexProd = sc.nextInt();
+		pd.ingPrato.add(GerenciadorIngredientes.listIns.get(indexProd));
+		
+		System.out.println("Cadastro Completo!!!");
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+package projetos.atividadeEstoque;
+
+public class Prato {
+	
+        String nomePro;
+		int idPro;
+		double preçoPro;
+		
+		
+		
+
+	}
+
+
+
